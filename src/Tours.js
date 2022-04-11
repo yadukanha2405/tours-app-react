@@ -1,9 +1,16 @@
-export default function Tours({ id, name, image, info, price }) {
+export default function Tours({ tours }) {
   return (
     <div>
-      <h1> {name} </h1>
-      <h1>{price}</h1>
-      <h1></h1>
+      {tours.map((tour) => {
+        const { name, image, info } = tour;
+        return (
+          <>
+            <img src={image} alt={name} />
+            <h1> {name} </h1>
+            <p> {info} </p>
+          </>
+        );
+      })}
     </div>
   );
 }
