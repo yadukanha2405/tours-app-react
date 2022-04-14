@@ -11,10 +11,12 @@ export default function Tour({ id, image, info, name, price, removeTour }) {
           <h4 className="tour-price"> ${price} </h4>
         </div>
         <div>
-          <p>{readMore ? info : `${info.substring(0, 200)}...`}</p>
-          <button onClick={() => setReadMore(!readMore)}>
-            {readMore ? "show Less" : "read more"}
-          </button>
+          <p>
+            {readMore ? info : `${info.substring(0, 200)}...`}
+            <button onClick={() => setReadMore(!readMore)}>
+              {readMore ? "show Less" : "read more"}
+            </button>
+          </p>
         </div>
         <button className="delete-btn" onClick={() => removeTour(id)}>
           not interested
