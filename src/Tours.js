@@ -1,16 +1,17 @@
-export default function Tours({ tours }) {
+import Tour from "./Tour";
+
+export default function Tours({ tours, removeTour }) {
   return (
-    <div>
-      {tours.map((tour) => {
-        const { name, image, info } = tour;
-        return (
-          <>
-            <img src={image} alt={name} />
-            <h1> {name} </h1>
-            <p> {info} </p>
-          </>
-        );
-      })}
-    </div>
+    <section>
+      <div className="title">
+        <h2>our tours</h2>
+        <div className="underline"></div>
+      </div>
+      <div>
+        {tours.map((tour) => {
+          return <Tour key={tour.id} {...tour} removeTour={removeTour} />;
+        })}
+      </div>
+    </section>
   );
 }
