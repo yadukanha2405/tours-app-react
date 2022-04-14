@@ -29,6 +29,13 @@ export default function App() {
   useEffect(() => {
     fetchTours();
   }, []);
+  if (loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+  }
 
   if (tours.length === 0) {
     return (
